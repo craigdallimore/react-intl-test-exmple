@@ -1,7 +1,8 @@
 'use strict';
 
-const TestUtils = require('react-addons-test-utils');
+const TestUtils        = require('react-addons-test-utils');
 const React            = require('react');
+const ReactDOM         = require('react-dom');
 const { IntlProvider } = require('react-intl');
 const messages         = { example : 'Translated' };
 
@@ -34,7 +35,7 @@ describe('component', () => {
     const WrappedComponent = wrap(Component);
     const c = TestUtils.renderIntoDocument(<WrappedComponent/>);
 
-    expect(c).toBeDefined();
+    expect(ReactDOM.findDOMNode(c).textContent).toContain(messages.example);
 
   });
 
