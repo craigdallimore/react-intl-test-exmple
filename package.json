@@ -15,7 +15,8 @@
     ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules"
-    ]
+    ],
+    "setupEnvScriptFile": "envScriptFile.js"
   },
   "scripts": {
     "test": "jest"
