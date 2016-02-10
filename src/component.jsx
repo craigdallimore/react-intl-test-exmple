@@ -1,13 +1,25 @@
 'use strict';
 
+const React          = require('react');
 const { injectIntl } = require('react-intl');
-const React = require('react');
+const action         = require('./action');
 
 const Example = React.createClass({
 
+  _buttonClicked() {
+
+    console.log('Button clicked, will call action');
+    action();
+
+  },
+
   render() {
 
-    return <h1>{ this.props.intl.formatMessage({ id : 'example' }) }</h1>;
+    return (
+      <button onClick={ this._buttonClicked }>
+        { this.props.intl.formatMessage({ id : 'example' }) }
+      </button>
+    );
 
   }
 

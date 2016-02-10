@@ -4,7 +4,7 @@ const React            = require('react');
 const { IntlProvider } = require('react-intl');
 const messages         = { example : 'Translated' };
 
-const wrap = (Component, props) => {
+const wrap = (Component) => {
 
   return React.createClass({
 
@@ -15,7 +15,7 @@ const wrap = (Component, props) => {
           messages = { messages }
           locale   = "en"
         >
-          <Component {...props}/>
+          <Component/>
         </IntlProvider>
       );
 
