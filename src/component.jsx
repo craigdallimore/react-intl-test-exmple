@@ -16,7 +16,9 @@ const Example = React.createClass({
   render() {
 
     return (
-      <button onClick={ this._buttonClicked }>
+      <button
+        onClick = { this._buttonClicked }
+      >
         { this.props.intl.formatMessage({ id : 'example' }) }
       </button>
     );
