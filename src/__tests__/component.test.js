@@ -1,7 +1,7 @@
 'use strict';
 
 const messages  = { example : 'Translated' };
-const TestUtils = require('react-addons-test-utils');
+const wrap      = require.requireActual('../../wrapIntlProvider');
 
 describe('component', () => {
 
@@ -21,15 +21,16 @@ describe('component', () => {
 
   it('will display translations', () => {
 
+    // contrived, see wrapIntlProvider for identical `messages` declaration
     expect(findDOMNode(c).textContent).toContain(messages.example);
 
   });
 
   it('will call an action when clicked', () => {
 
-    const button = TestUtils.findRenderedDOMComponentWithTag(c, 'button');
+    const button = findWithTag(c, 'button');
 
-    TestUtils.Simulate.click(button);
+    Simulate.click(button);
     expect(action).toBeCalled();
 
   });
