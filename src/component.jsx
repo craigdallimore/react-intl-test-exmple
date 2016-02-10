@@ -15,6 +15,12 @@ const Example = React.createClass({
 
   render() {
 
+    // if I add a `ref` attribute to this component:
+    // Invariant Violation: addComponentAsRefTo(...): Only a ReactOwner can
+    // have refs. You might be adding a ref to a component that was not created
+    // inside a component's `render` method, or you have multiple copies of
+    // React loaded (details: https://fb.me/react-refs-must-have-owner).
+
     return (
       <button
         onClick = { this._buttonClicked }
